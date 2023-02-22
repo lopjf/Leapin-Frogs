@@ -10,9 +10,8 @@ const buttonPerso = "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus
 const minAmount = 1;
 const maxAmount = 5;
 
-const Home = ({ accounts, setAccounts }) => {
+const Home = ({ connectAccount, isConnected }) => {
 	const [mintAmount, setMintAmount] = useState(1);
-	const isConnected = Boolean(accounts[0]);
 
 	async function handleMint() {
 		// all of this is necessary so we can use the contract functions
@@ -68,14 +67,38 @@ const Home = ({ accounts, setAccounts }) => {
 					<>
 					<p className="pt-20 text-2xl w-1/2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eaque suscipit minima ipsum laborum autem dolores illo ex obcaecati aliquid!</p>
 					<div className="mt-40 flex justify-evenly items-center w-1/4">
-						<button type="button" onClick={handleDecrement} className= {buttonPerso} >-</button>
-						<input type="number" value={mintAmount} className="text-center w-10 mx-2" />
-						<button type="button" onClick={handleIncrement} className= {buttonPerso}>+</button>
+						<div className='pixel2'>
+							<p className='px-4' onClick={handleDecrement}>-</p>
+						</div>
+						<input type="text" value={mintAmount} className="text-center w-10 mx-2" readonly />
+						<div className='pixel2'>
+							<p className='px-4' onClick={handleIncrement}>+</p>
+						</div>
 					</div>
-					<button type="button" className="whitespace-nowrap mt-10 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-10 py-4">MINT NOW</button>
+					<div className='pixel2'>
+						<p>MINT NOW</p>
+					</div>
+					{/* <button type="button" className="whitespace-nowrap mt-10 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-10 py-4">MINT NOW</button> */}
 					</>
 				) : (
-					<p className="pt-60 text-2xl w-1/2 text-red-500">Please connect your wallet to continue.</p>
+
+					// <li>
+
+					// {isConnected ? (
+					// 	<div className="pixel2 text-5xl">
+					// 	  <p>Connected</p>
+					// 	</div>
+					//   ) : (
+					// 	<div className="pixel2 text-5xl">
+					// 	  <p onClick={connectAccount()}>Connect Wallet</p>
+					// 	</div>
+					//   )}
+      				// </li>
+
+					<p className="pt-20 text-2xl w-1/2 text-red-500">Please connect your wallet to continue.</p>
+					// <div className='pixel2'>
+					// 	<p></p>
+					// </div>
 				)}
 			</div>
 		</div>

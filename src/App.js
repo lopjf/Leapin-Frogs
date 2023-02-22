@@ -6,10 +6,21 @@ import Footer from './Footer';
 function App() {
   const [accounts, setAccounts] = useState([]); // useState is a type of hook. It enables react to render the right elements and components when 'accounts' and 'setAccounts' get updated
   
+  async function connectAccount() {
+		if (window.ethereum) {	// when using Metamask, it injects the app with window.ethereum. So this checks if that exist, if so it...
+			const accounts = await window.ethereum.request({
+				method: "eth_requestAccounts",		// that gives us all the accounts that exist in the metamask wallet
+			});
+			setAccounts(accounts);	// this update the State in App.js
+		}
+	}
+
+  const isConnected = Boolean(accounts[0]);	// account[0] is the address of the wallet. This detect when we are connected versus when we are not connected
+
   return (
     <div>
-      <Navbar accounts={accounts} setAccounts={setAccounts}></Navbar>
-      <Home accounts={accounts} setAccounts={setAccounts}></Home>
+      <Navbar connectAccount={connectAccount} isConnected={isConnected}></Navbar>
+      <Home connectAccount={connectAccount} isConnected={isConnected}></Home>
       <Footer></Footer>
     </div>
   );
