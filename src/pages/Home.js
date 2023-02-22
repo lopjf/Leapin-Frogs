@@ -48,18 +48,15 @@ const Home = ({ accounts, setAccounts }) => {
 	return (
 	<div>
 		{/* 1st page */}
-		{/* min-h-screen */}
-		{/* bg-[url("")] */}
-		<div className="bg-background1 bg-opacity-10 bg-no-repeat bg-cover bg-center bg-fixed">
-			<div className="flex flex-col items-center pt-28 pb-28">
-				<h1 className="text-9xl">Leapin' Frogs</h1>
-				<div className="mt-20 flex justify-evenly items-center w-3/5 ">
-					<div className="bg-white p-10">
-					<p className="text-4xl ">Leapin' Frogs is a collection of NFTs featuring a charming and adventurous frog with a trusty leather backpack. Each NFT captures a unique moment in the frog's life, highlighting its spirit of curiosity and wonder, making every situation an opportunity for growth and learning. Join the adventure, take home a piece of the magic, and experience the infectious spirit of the Leapin' Frogs collection for yourself! </p>
+		<div className="bg-background1 bg-no-repeat bg-cover bg-center bg-fixed">
+			<div className="flex flex-col items-center pt-20 md:pt-40 pb-20">
+				<h1 className="text-5xl md:text-8xl lg:text-9xl">Leapin' Frogs</h1>
+					<div className="bg-white p-4 my-4 md:p-10 md:my-10 rounded-lg bg-opacity-80 xl:w-3/5 md:w-5/6">
+						<p className="text-justify text-xl md:text-4xl">Leapin' Frogs is a collection of NFTs featuring a charming and adventurous frog with a trusty leather backpack. Each NFT captures a unique moment in the frog's life, highlighting its spirit of curiosity and wonder, making every situation an opportunity for growth and learning. Join the adventure, take home a piece of the magic, and experience the infectious spirit of the Leapin' Frogs collection for yourself! </p>
 					</div>
-					
-					<button type="button" className="whitespace-nowrap ml-40 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-10 py-4">MINT NOW</button>
-				</div>
+					<div className='pixel2 text-center'>
+						<p className='text-5xl px-6'>Mint<br/>Now</p>
+					</div>
 			</div>
 		</div>
 

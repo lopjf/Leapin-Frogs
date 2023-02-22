@@ -39,10 +39,12 @@ const NavBar = ({ accounts, setAccounts }) => {
 
       <li>
       {isConnected ? (
-      <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">Connected</button>
+        <div className="pixel2 text-5xl">
+          <p>Connected</p>
+        </div>
       ) : (
-        <div className="pixel">
-        <p onClick={connectAccount()}>Connect</p>
+        <div className="pixel2 text-5xl">
+          <p onClick={connectAccount()}>Connect Wallet</p>
         </div>
       )}
       </li>
