@@ -1,0 +1,19 @@
+.carousel {
+	animation: slide 9s infinite;
+  }
+  
+  .carousel-item {
+	scroll-snap-align: center;
+  }
+  
+  @keyframes slide {
+	0% { transform: translateX(0); }
+	25% { transform: translateX(0); }
+	30% { transform: translateX(-100%); }
+	55% { transform: translateX(-100%); }
+	60% { transform: translateX(-200%); }
+	85% { transform: translateX(-200%); }
+	90% { transform: translateX(-300%); }
+	100% { transform: translateX(-300%); }
+  }
+  

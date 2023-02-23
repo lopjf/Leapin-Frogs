@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ethers, BigNumber } from 'ethers';	
 import React from 'react'
 import liquidSquid from '../LiquidSquid.json';	// this enable us to grab the ABI, to connect to our contract
+import './Carousel.css'
 
 const liquidSquidAddress = "0x593E0473ec5321C5622A1F7aB96698586c71E81d";
 
@@ -44,14 +45,47 @@ const Home = ({ connectAccount, isConnected }) => {
 		setMintAmount(mintAmount + 1);
 	};
 	
+	const slides = [
+		{
+			url: '/home/loris/Documents/webdev/Leapin-Frogs/carousel/1.png'
+		},
+		{
+			url: '/home/loris/Documents/webdev/Leapin-Frogs/carousel/2.png'
+		},
+		{
+			url: '/home/loris/Documents/webdev/Leapin-Frogs/carousel/3.png'
+		},
+		{
+			url: '/home/loris/Documents/webdev/Leapin-Frogs/carousel/4.png'
+		},
+		{
+			url: '/home/loris/Documents/webdev/Leapin-Frogs/carousel/5.png'
+		},
+		{
+			url: '/home/loris/Documents/webdev/Leapin-Frogs/carousel/6.png'
+		},
+		{
+			url: '/home/loris/Documents/webdev/Leapin-Frogs/carousel/7.png'
+		},
+		{
+			url: '/home/loris/Documents/webdev/Leapin-Frogs/carousel/8.png'
+		},
+		{
+			url: '/home/loris/Documents/webdev/Leapin-Frogs/carousel/9.png'
+		},
+		{
+			url: '/home/loris/Documents/webdev/Leapin-Frogs/carousel/10.png'
+		},
+	];
+
 	return (
 	<div>
 		{/* 1st page */}
 		<div className="bg-background1 bg-no-repeat bg-cover bg-center bg-fixed">
 			<div className="flex flex-col items-center pt-20 md:pt-40 pb-20">
 				<h1 className="text-5xl md:text-8xl lg:text-9xl">Leapin' Frogs</h1>
-					<div className="bg-white p-4 my-4 md:p-10 md:my-10 rounded-lg bg-opacity-80 xl:w-3/5 md:w-5/6">
-						<p className="text-justify text-xl md:text-4xl">Leapin' Frogs is a collection of NFTs featuring a charming and adventurous frog with a trusty leather backpack. Each NFT captures a unique moment in the frog's life, highlighting its spirit of curiosity and wonder, making every situation an opportunity for growth and learning. Join the adventure, take home a piece of the magic, and experience the infectious spirit of the Leapin' Frogs collection for yourself! </p>
+					<div className="bg-white p-4 my-4 md:p-10 md:my-10 rounded-lg bg-opacity-80 xl:w-3/5 md:w-5/6 drop-shadow-lg">
+						<p className="text-justify text-xl md:text-4xl">Leapin' Frogs is a  NFTs collection featuring a charming and adventurous frog with a trusty leather backpack. Each NFT captures a unique moment in the frog's life, highlighting its spirit of curiosity and wonder, making every situation an opportunity for growth and learning. Join the adventure, take home a piece of the magic, and experience the infectious spirit of the Leapin' Frogs collection for yourself! </p>
 					</div>
 					<div className='pixel2 text-center'>
 						<p className='text-5xl px-6'>Mint<br/>Now</p>
@@ -59,14 +93,20 @@ const Home = ({ connectAccount, isConnected }) => {
 			</div>
 		</div>
 
+		{/* Carousel */}
+
+		<div className='max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative'>
+			<div style={{backgroundImage: `url(${slides[0].url})`}} className='w-full h-full bg-center bg-cover duration-500'></div>
+		</div>
+
 		{/* 2nd page */}
-		<div className="bg-slate-50">
-			<div className="flex flex-col items-center text-center pt-40 pb-40">
-				<h1 className="text-5xl">Leapin' Frogs</h1>
+		<div className="bg-slate-50 px-96 py-20">
+			<div className="flex flex-col items-center text-center py-20 bg-slate-200 rounded-lg drop-shadow-lg">
+				<h1 className="text-xl md:text-5xl">Leapin' Frogs</h1>
 				{isConnected ? (
 					<>
 					<p className="pt-20 text-2xl w-1/2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eaque suscipit minima ipsum laborum autem dolores illo ex obcaecati aliquid!</p>
-					<div className="mt-40 flex justify-evenly items-center w-1/4">
+					<div className="mt-20 flex justify-evenly items-center w-1/4">
 						<div className='pixel2'>
 							<p className='px-4' onClick={handleDecrement}>-</p>
 						</div>
@@ -76,35 +116,24 @@ const Home = ({ connectAccount, isConnected }) => {
 						</div>
 					</div>
 					<div className='pixel2'>
-						<p>MINT NOW</p>
+						<p onClick={handleMint}>MINT NOW</p>
 					</div>
-					{/* <button type="button" className="whitespace-nowrap mt-10 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-10 py-4">MINT NOW</button> */}
+
 					</>
-				) : (
-
-					// <li>
-
-					// {isConnected ? (
-					// 	<div className="pixel2 text-5xl">
-					// 	  <p>Connected</p>
-					// 	</div>
-					//   ) : (
-					// 	<div className="pixel2 text-5xl">
-					// 	  <p onClick={connectAccount()}>Connect Wallet</p>
-					// 	</div>
-					//   )}
-      				// </li>
-
-					<p className="pt-20 text-2xl w-1/2 text-red-500">Please connect your wallet to continue.</p>
-					// <div className='pixel2'>
-					// 	<p></p>
-					// </div>
-				)}
+					  ) : (
+						<>
+							<p className="pt-20 pb-10 text-4xl text-red-500">Please connect your wallet to continue.</p>
+							<div className="pixel2">
+						  		<p onClick={connectAccount()}>Connect Wallet</p>
+							</div>
+						</>
+					)}
 			</div>
 		</div>
 
 		{/* 3rd page */}
-		<div className="bg-background2 opacity-50 bg-no-repeat bg-cover bg-bottom">
+		{/* <div className="bg-background2 bg-no-repeat bg-cover bg-bottom bg-fixed relative"> */}
+		<div className="bg-background2 bg-no-repeat bg-cover bg-bottom bg-fixed">
 			<div className="py-60 flex justify-evenly w-1/2 mx-auto">
 					<div className="text-4xl">
 						<p>
@@ -152,6 +181,7 @@ And all the wonder, of his daring presence.<br/>
 					</div>
 			</div>
 		</div>
+		{/* <div className="absolute inset-0 bg-background2 opacity-50"></div> */}
 	</div>
   )
 }

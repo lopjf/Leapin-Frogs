@@ -5,12 +5,12 @@ const Footer = () => {
 	
 <footer class="p-4 bg-white sm:p-6 container mx-auto">
 <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
-    <div class="md:flex md:justify-center">
-        <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 ">
+    <div class="flex justify-center">
+        <div class="grid gap-8 sm:gap-2 grid-cols-3 md:text-2xl">
             <div>
                 <ul class="text-gray-600">
                     <li class="mb-4">
-                        <a href="" class="hover:underline">About</a>
+                        <a href="" class="hover:underline">Home</a>
                     </li>
                 </ul>
             </div>
@@ -23,21 +23,22 @@ const Footer = () => {
 
                 <ul class="text-gray-600">
                     <li class="mb-4">
-                        <a href="" class="hover:underline ">Telegram</a>
+                        <a href="https://t.me/+mXpyU2n11i0yMGFk" class="hover:underline ">Telegram</a>
                     </li>
                 </ul>
             </div>
             <div>
                 <ul class="text-gray-600">
                     <li class="mb-4">
-                        <a href="#" class="hover:underline">Opensea (Soon)</a>
+                        <a >Opensea (Soon)</a>
+                        {/* href="#" class="hover:underline" */}
                     </li>
                 </ul>
             </div>
         </div>
     </div>
 	<div class="flex items-center justify-center pt-6">
-        <span class="text-sm text-gray-500 sm:text-center">© 2023 <a href="#" class="hover:underline">Leapin' Frogs™</a>. All Rights Reserved.
+        <span class="text-sm md:text-lg text-gray-500 sm:text-center">© 2023 <a href="#" class="hover:underline">Leapin' Frogs™</a>. All Rights Reserved.
         </span>
 	</div>
 </footer>
