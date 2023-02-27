@@ -121,3 +121,7 @@
 		z-index: 2;
 	  }
 }
+
+.ReactCollapse--collapse {
+	transition:height 500ms;
+}

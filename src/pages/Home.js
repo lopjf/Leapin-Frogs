@@ -1,18 +1,18 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ethers, BigNumber } from 'ethers';	
 import React from 'react'
 import liquidSquid from '../LiquidSquid.json';	// this enable us to grab the ABI, to connect to our contract
 import './Carousel.css'
-
-const liquidSquidAddress = "0x593E0473ec5321C5622A1F7aB96698586c71E81d";
-
-const buttonPerso = "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-10 py-4";
-
-const minAmount = 1;
-const maxAmount = 5;
+import AccordionItem from '../components/Accordionitem';
 
 const Home = ({ connectAccount, isConnected }) => {
+
+	{/* Mint page */}
+	
 	const [mintAmount, setMintAmount] = useState(1);
+	const liquidSquidAddress = "0x593E0473ec5321C5622A1F7aB96698586c71E81d";
+	const minAmount = 1;
+	const maxAmount = 5;
 
 	async function handleMint() {
 		// all of this is necessary so we can use the contract functions
@@ -44,39 +44,80 @@ const Home = ({ connectAccount, isConnected }) => {
 		if (mintAmount >= maxAmount) return;
 		setMintAmount(mintAmount + 1);
 	};
-	
+
+	{/* Carousel page */}
+
+	const [slideIndex, setSlideIndex] = useState(0);
+
 	const slides = [
 		{
-			url: '/home/loris/Documents/webdev/Leapin-Frogs/carousel/1.png'
+			url: 'https://cdn.midjourney.com/a3d14172-8e49-46bd-993f-f95d4e33bb2a/grid_0.png' // 1
 		},
 		{
-			url: '/home/loris/Documents/webdev/Leapin-Frogs/carousel/2.png'
+			url: 'https://cdn.midjourney.com/be14c13d-a2ca-4a06-b992-0db167e1d9d3/grid_0.png' // 2
 		},
 		{
-			url: '/home/loris/Documents/webdev/Leapin-Frogs/carousel/3.png'
+			url: 'https://cdn.midjourney.com/3b917151-6bd6-4a6e-b0c4-65976ea8b0af/grid_0.png' // 3
 		},
 		{
-			url: '/home/loris/Documents/webdev/Leapin-Frogs/carousel/4.png'
+			url: 'https://cdn.midjourney.com/cd209792-ceee-4ed4-88a9-b62b02b69263/grid_0.png' // 4
 		},
 		{
-			url: '/home/loris/Documents/webdev/Leapin-Frogs/carousel/5.png'
+			url: 'https://cdn.midjourney.com/9e889d93-3d5e-4b6a-920c-d543219496e4/grid_0.png' // 5
 		},
 		{
-			url: '/home/loris/Documents/webdev/Leapin-Frogs/carousel/6.png'
+			url: 'https://cdn.midjourney.com/03bc67f4-b4b3-468a-ab6c-8ba7f95349d7/grid_0.png' // 6
 		},
 		{
-			url: '/home/loris/Documents/webdev/Leapin-Frogs/carousel/7.png'
+			url: 'https://cdn.midjourney.com/39695d84-0f98-4a6d-96e5-b2bc79a84c1a/grid_0.png' // 7
 		},
 		{
-			url: '/home/loris/Documents/webdev/Leapin-Frogs/carousel/8.png'
+			url: 'https://cdn.midjourney.com/16f50eb9-53b8-48e0-a266-8e501443660d/grid_0.png' // 8
 		},
 		{
-			url: '/home/loris/Documents/webdev/Leapin-Frogs/carousel/9.png'
+			url: 'https://cdn.midjourney.com/c28944bf-975c-4e3f-acaf-cac11361e6d3/grid_0.png' // 9
 		},
 		{
-			url: '/home/loris/Documents/webdev/Leapin-Frogs/carousel/10.png'
+			url: 'https://cdn.midjourney.com/95f72c54-4d8c-4bb8-ac38-f5ce46464fe3/grid_0.png' // 10
 		},
 	];
+
+	const changeSlide = () => {
+		if (setSlideIndex > 10)
+			setSlideIndex(0);
+		setSlideIndex(slideIndex + 1);
+	}
+
+	useEffect(() => {
+		const interval = setInterval(changeSlide, 3000);
+		return () => clearInterval(interval);
+	}, [slideIndex]);
+
+	{/* Accordion page */}
+
+	const [open, setOpen] = useState(false);
+
+	const toggle = (index) => {
+		if(open === index) {
+			return setOpen(null)
+		}
+		setOpen(index)
+	}
+
+	const accordionData = [
+	{
+		title:"What is Leapin' Frogs",
+		desc:"nfhsdiaofgbhi",
+	},
+	{
+		title:"How many NFT is there",
+		desc:"nfhsdiaofgbhi2",
+	},
+	{
+		title:"Is the a roadmap?",
+		desc:"Leapin' Frog was created by a motivated entrepreneur that aims on creating disruptive NFT swapping platform. All Leapin' Frogs owner will be rewarded for their early trust",
+	},
+];
 
 	return (
 	<div>
@@ -92,12 +133,26 @@ const Home = ({ connectAccount, isConnected }) => {
 					</div>
 			</div>
 		</div>
+		
 
 		{/* Carousel */}
 
-		<div className='max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative'>
-			<div style={{backgroundImage: `url(${slides[0].url})`}} className='w-full h-full bg-center bg-cover duration-500'></div>
+		<div className='bg-slate-100 p-20'>
+			<div className='bg-slate-200 max-w-[700px] h-[700px] w-full m-auto p-10 rounded-lg relative'>
+				<div style={{backgroundImage: `url(${slides[6].url})`}} className='w-full h-full bg-center bg-cover rounded-md duration-500'></div>
+			</div>
 		</div>
+
+		{/* Accordion */}
+
+<section className='bg-background2 bg-no-repeat bg-cover bg-center bg-fixed h-screen grid place-content-center'>
+		<div className='px-[40px] max-w-[800px]'></div>
+
+		{accordionData.map((data, index) => {
+			return <AccordionItem key={index} open={index === open} title={data.title} desc={data.desc} toggle={()=>toggle(index)} />;
+		})}
+
+</section>
 
 		{/* 2nd page */}
 		<div className="bg-slate-50 px-96 py-20">
@@ -133,7 +188,7 @@ const Home = ({ connectAccount, isConnected }) => {
 
 		{/* 3rd page */}
 		{/* <div className="bg-background2 bg-no-repeat bg-cover bg-bottom bg-fixed relative"> */}
-		<div className="bg-background2 bg-no-repeat bg-cover bg-bottom bg-fixed">
+		<div className="bg-background3 bg-no-repeat bg-cover bg-bottom bg-fixed">
 			<div className="py-60 flex justify-evenly w-1/2 mx-auto">
 					<div className="text-4xl">
 						<p>
