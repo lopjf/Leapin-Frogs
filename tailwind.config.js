@@ -8,6 +8,7 @@ module.exports = {
       backgroundImage: {
         'background1': "url('/home/loris/Documents/webdev/Leapin-Frogs/src/background1.png')",
         'background2': "url('/home/loris/Documents/webdev/Leapin-Frogs/src/background2.png')",
+        'background3': "url('/home/loris/Documents/webdev/Leapin-Frogs/src/background3.png')",
       },
     },
     screens: {
