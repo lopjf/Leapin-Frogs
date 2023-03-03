@@ -1,9 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { ethers, BigNumber } from 'ethers';	
 import React from 'react'
 import liquidSquid from '../LiquidSquid.json';	// this enable us to grab the ABI, to connect to our contract
-import './Carousel.css'
 import AccordionItem from '../components/Accordionitem';
+
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+
+// import required modules
+import { EffectCoverflow, Pagination } from "swiper";
 
 const Home = ({ connectAccount, isConnected }) => {
 
@@ -47,8 +57,6 @@ const Home = ({ connectAccount, isConnected }) => {
 
 	{/* Carousel page */}
 
-	const [slideIndex, setSlideIndex] = useState(0);
-
 	const slides = [
 		{
 			url: 'https://cdn.midjourney.com/a3d14172-8e49-46bd-993f-f95d4e33bb2a/grid_0.png' // 1
@@ -81,17 +89,6 @@ const Home = ({ connectAccount, isConnected }) => {
 			url: 'https://cdn.midjourney.com/95f72c54-4d8c-4bb8-ac38-f5ce46464fe3/grid_0.png' // 10
 		},
 	];
-
-	const changeSlide = () => {
-		if (setSlideIndex > 10)
-			setSlideIndex(0);
-		setSlideIndex(slideIndex + 1);
-	}
-
-	useEffect(() => {
-		const interval = setInterval(changeSlide, 3000);
-		return () => clearInterval(interval);
-	}, [slideIndex]);
 
 	{/* Accordion page */}
 
@@ -137,11 +134,67 @@ const Home = ({ connectAccount, isConnected }) => {
 
 		{/* Carousel */}
 
-		<div className='bg-slate-100 p-20'>
+		{/* <div className='bg-slate-100 p-20'>
 			<div className='bg-slate-200 max-w-[700px] h-[700px] w-full m-auto p-10 rounded-lg relative'>
 				<div style={{backgroundImage: `url(${slides[6].url})`}} className='w-full h-full bg-center bg-cover rounded-md duration-500'></div>
 			</div>
-		</div>
+		</div> */}
+
+	<div className='p-20 max-w-[700px] m-auto'>
+	<div className=''>
+      <Swiper
+        effect={"coverflow"}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={"auto"}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        pagination={false}
+		loop={true}
+		autoplay={{
+			delay: 300,
+		}}
+        modules={[EffectCoverflow, Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+			<img src={slides[0].url} className='rounded-lg' />
+        </SwiperSlide>
+        <SwiperSlide>
+			<img src={slides[1].url} className='rounded-lg' />
+        </SwiperSlide>
+        <SwiperSlide>
+			<img src={slides[2].url} className='rounded-lg' />
+        </SwiperSlide>
+        <SwiperSlide>
+			<img src={slides[3].url} className='rounded-lg' />
+        </SwiperSlide>
+        <SwiperSlide>
+			<img src={slides[4].url} className='rounded-lg' />
+        </SwiperSlide>
+        <SwiperSlide>
+			<img src={slides[5].url} className='rounded-lg' />
+        </SwiperSlide>
+        <SwiperSlide>
+			<img src={slides[6].url} className='rounded-lg' />
+        </SwiperSlide>
+        <SwiperSlide>
+			<img src={slides[7].url} className='rounded-lg' />
+        </SwiperSlide>
+        <SwiperSlide>
+			<img src={slides[8].url} className='rounded-lg' />
+        </SwiperSlide>
+		<SwiperSlide>
+			<img src={slides[9].url} className='rounded-lg' />
+        </SwiperSlide>
+      </Swiper>
+	  </div>
+	  </div>
 
 		{/* Accordion */}
 
