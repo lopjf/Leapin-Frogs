@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ethers, BigNumber } from 'ethers';	
 import React from 'react'
 import liquidSquid from '../LiquidSquid.json';	// this enable us to grab the ABI, to connect to our contract
@@ -6,6 +6,7 @@ import AccordionItem from '../components/Accordionitem';
 
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
@@ -17,7 +18,7 @@ import { EffectCoverflow, Pagination } from "swiper";
 
 const Home = ({ connectAccount, isConnected }) => {
 
-	{/* Mint page */}
+	// Mint page
 	
 	const [mintAmount, setMintAmount] = useState(1);
 	const liquidSquidAddress = "0x593E0473ec5321C5622A1F7aB96698586c71E81d";
@@ -55,7 +56,7 @@ const Home = ({ connectAccount, isConnected }) => {
 		setMintAmount(mintAmount + 1);
 	};
 
-	{/* Carousel page */}
+	// Carousel page
 
 	const slides = [
 		{
@@ -90,7 +91,7 @@ const Home = ({ connectAccount, isConnected }) => {
 		},
 	];
 
-	{/* Accordion page */}
+	// Accordion page
 
 	const [open, setOpen] = useState(false);
 
@@ -157,40 +158,40 @@ const Home = ({ connectAccount, isConnected }) => {
         pagination={false}
 		loop={true}
 		autoplay={{
-			delay: 300,
+			delay: 3000,
 		}}
-        modules={[EffectCoverflow, Pagination]}
+        modules={[EffectCoverflow, Pagination, Autoplay]}
         className="mySwiper"
       >
         <SwiperSlide>
-			<img src={slides[0].url} className='rounded-lg' />
+			<img src={slides[0].url} alt="0" className='rounded-lg' />
         </SwiperSlide>
         <SwiperSlide>
-			<img src={slides[1].url} className='rounded-lg' />
+			<img src={slides[1].url} alt="1" className='rounded-lg' />
         </SwiperSlide>
         <SwiperSlide>
-			<img src={slides[2].url} className='rounded-lg' />
+			<img src={slides[2].url} alt="2" className='rounded-lg' />
         </SwiperSlide>
         <SwiperSlide>
-			<img src={slides[3].url} className='rounded-lg' />
+			<img src={slides[3].url} alt="3" className='rounded-lg' />
         </SwiperSlide>
         <SwiperSlide>
-			<img src={slides[4].url} className='rounded-lg' />
+			<img src={slides[4].url} alt="4" className='rounded-lg' />
         </SwiperSlide>
         <SwiperSlide>
-			<img src={slides[5].url} className='rounded-lg' />
+			<img src={slides[5].url} alt="5" className='rounded-lg' />
         </SwiperSlide>
         <SwiperSlide>
-			<img src={slides[6].url} className='rounded-lg' />
+			<img src={slides[6].url} alt="6" className='rounded-lg' />
         </SwiperSlide>
         <SwiperSlide>
-			<img src={slides[7].url} className='rounded-lg' />
+			<img src={slides[7].url} alt="7" className='rounded-lg' />
         </SwiperSlide>
         <SwiperSlide>
-			<img src={slides[8].url} className='rounded-lg' />
+			<img src={slides[8].url} alt="8" className='rounded-lg' />
         </SwiperSlide>
 		<SwiperSlide>
-			<img src={slides[9].url} className='rounded-lg' />
+			<img src={slides[9].url} alt="9" className='rounded-lg' />
         </SwiperSlide>
       </Swiper>
 	  </div>
