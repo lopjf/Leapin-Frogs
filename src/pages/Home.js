@@ -202,30 +202,31 @@ const Home = ({ connectAccount, isConnected }) => {
 </section>
 
 		{/* 2nd page */}
-		<div className="bg-slate-50 px-20 xl:px-40 2xl:px-96 py-20">
+		<div className="bg-slate-50 px-8 lg:px-20 xl:px-40 2xl:px-96 py-20">
 			<div className="flex flex-col items-center text-center py-10 md:py-20 bg-slate-200 rounded-lg drop-shadow-lg">
 				<h1 className="text-3xl md:text-5xl">Leapin' Frogs</h1>
 				{isConnected ? (
 					<>
 					<p className="pt-10 md:pt-20 text-lg md:text-2xl w-5/6 xl:w-4/6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eaque suscipit minima ipsum laborum autem dolores illo ex obcaecati aliquid!</p>
 					<div className="mt-10 md:mt-20 flex justify-evenly items-center w-1/4">
-						<div className='pixel2'>
+						<div className='pixel3 lg:pixel2'>
 							<p className='px-4' onClick={handleDecrement}>-</p>
 						</div>
-						<input type="text" value={mintAmount} className="text-center w-10 mx-2" readonly />
-						<div className='pixel2'>
+						{/* <input type="text" value={mintAmount} className="text-center w-10 mx-2 text-4xl" readonly /> */}
+						<span className="text-center w-10 mx-4 lg:mx-2 text-4xl">{mintAmount}</span>
+						<div className='pixel3 lg:pixel2'>
 							<p className='px-4' onClick={handleIncrement}>+</p>
 						</div>
 					</div>
-					<div className='pixel2'>
+					<div className='pixel3 lg:pixel2'>
 						<p onClick={handleMint}>MINT NOW</p>
 					</div>
 
 					</>
 					  ) : (
 						<>
-							<p className="pt-20 pb-10 text-4xl text-red-500">Please connect your wallet to continue.</p>
-							<div className="pixel2">
+							<p className="pt-10 md:pt-20 pb-10 text-4xl text-red-500">Please connect your wallet to continue.</p>
+							<div className="pixel3 lg:pixel2">
 						  		<p onClick={connectAccount()}>Connect Wallet</p>
 							</div>
 						</>
@@ -236,8 +237,8 @@ const Home = ({ connectAccount, isConnected }) => {
 		{/* 3rd page */}
 		{/* <div className="bg-background2 bg-no-repeat bg-cover bg-bottom bg-fixed relative"> */}
 		<div className="bg-background3 bg-no-repeat bg-cover bg-bottom bg-fixed">
-			<div className="py-60 flex justify-evenly w-1/2 mx-auto">
-					<div className="text-4xl">
+			<div className="py-20 md:py-52 px-2 flex justify-evenly">
+					<div className="text-sm sm:text-xl md:text-3xl lg:text-4xl">
 						<p>
 						
 In the magical world of Leapin' Frogs,<br/>
