@@ -6,7 +6,6 @@ import AccordionItem from '../components/Accordionitem';
 
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
@@ -14,7 +13,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 // import required modules
-import { EffectCoverflow, Pagination } from "swiper";
+import { EffectCoverflow, Pagination, Autoplay } from "swiper";
 
 const Home = ({ connectAccount, isConnected }) => {
 
@@ -135,14 +134,8 @@ const Home = ({ connectAccount, isConnected }) => {
 
 		{/* Carousel */}
 
-		{/* <div className='bg-slate-100 p-20'>
-			<div className='bg-slate-200 max-w-[700px] h-[700px] w-full m-auto p-10 rounded-lg relative'>
-				<div style={{backgroundImage: `url(${slides[6].url})`}} className='w-full h-full bg-center bg-cover rounded-md duration-500'></div>
-			</div>
-		</div> */}
-
-	<div className='p-20 max-w-[700px] m-auto'>
-	<div className=''>
+	<div className='p-10 md:p-20 bg-gray-100 flex justify-center items-center w-full'>
+	<div className='bg-gray-200 md:p-12 rounded-lg max-w-[700px] max-h-[700px]'>
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
@@ -199,7 +192,7 @@ const Home = ({ connectAccount, isConnected }) => {
 
 		{/* Accordion */}
 
-<section className='bg-background2 bg-no-repeat bg-cover bg-center bg-fixed h-screen grid place-content-center'>
+<section className='py-20 lg:py-40 xl:py-64 bg-background2 bg-no-repeat bg-cover bg-center bg-fixed grid place-content-center'>
 		<div className='px-[40px] max-w-[800px]'></div>
 
 		{accordionData.map((data, index) => {
@@ -209,13 +202,13 @@ const Home = ({ connectAccount, isConnected }) => {
 </section>
 
 		{/* 2nd page */}
-		<div className="bg-slate-50 px-96 py-20">
-			<div className="flex flex-col items-center text-center py-20 bg-slate-200 rounded-lg drop-shadow-lg">
-				<h1 className="text-xl md:text-5xl">Leapin' Frogs</h1>
+		<div className="bg-slate-50 px-20 xl:px-40 2xl:px-96 py-20">
+			<div className="flex flex-col items-center text-center py-10 md:py-20 bg-slate-200 rounded-lg drop-shadow-lg">
+				<h1 className="text-3xl md:text-5xl">Leapin' Frogs</h1>
 				{isConnected ? (
 					<>
-					<p className="pt-20 text-2xl w-1/2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eaque suscipit minima ipsum laborum autem dolores illo ex obcaecati aliquid!</p>
-					<div className="mt-20 flex justify-evenly items-center w-1/4">
+					<p className="pt-10 md:pt-20 text-lg md:text-2xl w-5/6 xl:w-4/6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eaque suscipit minima ipsum laborum autem dolores illo ex obcaecati aliquid!</p>
+					<div className="mt-10 md:mt-20 flex justify-evenly items-center w-1/4">
 						<div className='pixel2'>
 							<p className='px-4' onClick={handleDecrement}>-</p>
 						</div>
