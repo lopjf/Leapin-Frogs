@@ -3,6 +3,7 @@ import { ethers, BigNumber } from 'ethers';
 import React from 'react'
 import liquidSquid from '../LiquidSquid.json';	// this enable us to grab the ABI, to connect to our contract
 import AccordionItem from '../components/Accordionitem';
+import TextDisplay from "../components/TextDisplay";
 
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -115,6 +116,36 @@ const Home = ({ connectAccount, isConnected }) => {
 		desc:"Leapin' Frog was created by a motivated entrepreneur that aims on creating disruptive NFT swapping platform. All Leapin' Frogs owner will be rewarded for their early trust",
 	},
 ];
+
+	// Poem
+
+
+	const DisplayText = () => {
+		const [placeholder, setPlaceholder] = React.useState('');
+	  
+		const
+		  string = "In the magical world of Leapin' Frogs,\nThere's a curious creature, hopping logs.\nWith a leather backpack on his back,\nThis intrepid frog is always on the attack.\n\nIn 101 moments, we see his life unfold,\nA story of adventure, waiting to be told.\nHe walks through cities, with towering walls,\nAnd wanders through woods, where the sunlight falls.",
+		  index = React.useRef(0);
+	  
+		React.useEffect(() => {
+		  function tick() {
+			setPlaceholder(prev => prev + string[index.current]);
+			index.current++;
+		  }
+		  if (index.current < string.length) {
+			let addChar = setInterval(tick, 100);
+			return () => clearInterval(addChar);
+		  }
+		}, [placeholder]);
+	  
+		return (
+		  <div>
+			{placeholder}
+		  </div>
+		)
+	  }
+	  
+
 
 	return (
 	<div>
@@ -239,7 +270,47 @@ const Home = ({ connectAccount, isConnected }) => {
 		<div className="bg-background3 bg-no-repeat bg-cover bg-bottom bg-fixed">
 			<div className="py-20 md:py-52 px-2 flex justify-evenly">
 					<div className="text-sm sm:text-xl md:text-3xl lg:text-4xl">
-						<p>
+						<DisplayText/>
+						{/* <TextDisplay text="In the magical world of Leapin' Frogs,
+There's a curious creature, hopping logs.
+With a leather backpack on his back,
+This intrepid frog is always on the attack.
+
+In 101 moments, we see his life unfold,
+A story of adventure, waiting to be told.
+He walks through cities, with towering walls,
+And wanders through woods, where the sunlight falls.
+
+He crosses oceans, where the sea wind blows,
+And explores deserts, where the hot sand glows.
+No path is too treacherous, no place too far,
+He's fearless and bold, like a shining star.
+
+The frog has no name, but his spirit is free,
+A traveler at heart, like you and me.
+We wonder where he is now, and what he might see,
+As he leaps through life, with joyful glee.
+
+He roams through the countryside, with his pack on his back,
+Through meadows and fields, where the wildflowers stack.
+He climbs up mountains, with snow on the peaks,
+And walks through valleys, where the river runs and speaks.
+
+He loves the moments, when the sun sets in the sky,
+And paints the world, with colors that make us sigh.
+He feels the raindrops, as they touch his skin,
+And marvels at the world, that we all live in.
+
+Through all his travels, he seeks the simple joys,
+The wonders that surround us, in life's many alloys.
+He takes in the beauty, of every place he goes,
+And finds the happiness, in the things that most don't know.
+
+So come and join the Leapin' Frogs adventure,
+In a world where pixels, come alive with texture.
+A collection of memories, capturing the frog's essence,
+And all the wonder, of his daring presence." delay={100}/> */}
+						{/* <p>
 						
 In the magical world of Leapin' Frogs,<br/>
 There's a curious creature, hopping logs.<br/>
@@ -280,11 +351,10 @@ So come and join the Leapin' Frogs adventure,<br/>
 In a world where pixels, come alive with texture.<br/>
 A collection of memories, capturing the frog's essence,<br/>
 And all the wonder, of his daring presence.<br/>
-</p>
+</p> */}
 					</div>
 			</div>
 		</div>
-		{/* <div className="absolute inset-0 bg-background2 opacity-50"></div> */}
 	</div>
   )
 }
