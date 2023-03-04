@@ -4,7 +4,7 @@ import {AiOutlineMinus, AiOutlinePlus} from 'react-icons/ai'
 
 const AccordionItem = ({open, toggle, title, desc}) => {
   return (
-	<div className='pt-[10px]'>
+	<div className='pt-[10px] max-w-[1000px] px-10'>
 		<div className='bg-white py-[25px] px-[50px] flex justify-between items-center cursor-pointer' onClick={toggle}>
 			<p className='text-[22px] font-semibold'>{title}</p>
 			<div className='text-[30px]'>

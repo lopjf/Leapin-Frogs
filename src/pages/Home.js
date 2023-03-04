@@ -3,7 +3,6 @@ import { ethers, BigNumber } from 'ethers';
 import React from 'react'
 import liquidSquid from '../LiquidSquid.json';	// this enable us to grab the ABI, to connect to our contract
 import AccordionItem from '../components/Accordionitem';
-import TextDisplay from "../components/TextDisplay";
 
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -104,47 +103,25 @@ const Home = ({ connectAccount, isConnected }) => {
 
 	const accordionData = [
 	{
-		title:"What is Leapin' Frogs",
-		desc:"nfhsdiaofgbhi",
+		title:"What is Leapin' Frogs?",
+		desc:"Leapin' Frogs is a collection of 101 charming, pixelated images that depict the many adventures and experiences of a curious and adventurous frog. Each image in the collection captures a unique moment in the frog's life, from wandering through the forest to strolling through city streets. The frog is always accompanied by its trusty leather backpack, ready to take on the world and discover new wonders. The collection has a retro Sega style and showcases the frog's infectious spirit of curiosity and wonder. Take home a piece of the magic and join us on an unforgettable journey through the eyes of our plucky and charming frog.",
 	},
 	{
-		title:"How many NFT is there",
-		desc:"nfhsdiaofgbhi2",
+		title:"How can I buy Leapin' Frogs?",
+		desc:"To buy Leapin' Frogs, you can mint them directly on our website. Each unique NFT can be minted up to a maximum of five times per wallet. Simply connect your wallet to the website, choose the NFT you would like to mint, and follow the simple steps. The NFTs are available for purchase now and are perfect for collectors who appreciate the unique charm and retro Sega style of our adventurous frog. We're also working on listing our collection on Opensea, so stay tuned for updates on that. Don't miss your chance to own a piece of this delightful and heartwarming collection!",
 	},
 	{
-		title:"Is the a roadmap?",
-		desc:"Leapin' Frog was created by a motivated entrepreneur that aims on creating disruptive NFT swapping platform. All Leapin' Frogs owner will be rewarded for their early trust",
+		title:"Who created all this?",
+		desc:"By buying a Leapin' Frog NFT, you are not only acquiring a delightful piece of art, but you are also supporting a passionate entrepreneur with a vision to create disruptive NFT swapping platforms. The retro Sega-style pixelated images are sure to appeal to collectors and fans alike. And as a token of our appreciation for early trust, all Leapin' Frogs owners will be rewarded as we continue to grow and develop new initiatives. So why not join the adventure today and own a piece of this heartwarming collection?",
+	},
+	{
+		title:"What is the price of a Leapin' Frogs NFT?",
+		desc:"For now, you can own a piece of the charming and unique Leapin' Frogs NFT collection for just 0.01 ETH. At the time of writing, that's roughly equivalent to $15 USD, but please note that the value of cryptocurrencies can be volatile and subject to change. Once the collection is sold out, the price will depend on the free market on NFT exchanges. So don't wait too long to join the adventure and add a delightful piece of art to your collection!",
 	},
 ];
 
 	// Poem
 
-
-	const DisplayText = () => {
-		const [placeholder, setPlaceholder] = React.useState('');
-	  
-		const
-		  string = "In the magical world of Leapin' Frogs,\nThere's a curious creature, hopping logs.\nWith a leather backpack on his back,\nThis intrepid frog is always on the attack.\n\nIn 101 moments, we see his life unfold,\nA story of adventure, waiting to be told.\nHe walks through cities, with towering walls,\nAnd wanders through woods, where the sunlight falls.",
-		  index = React.useRef(0);
-	  
-		React.useEffect(() => {
-		  function tick() {
-			setPlaceholder(prev => prev + string[index.current]);
-			index.current++;
-		  }
-		  if (index.current < string.length) {
-			let addChar = setInterval(tick, 100);
-			return () => clearInterval(addChar);
-		  }
-		}, [placeholder]);
-	  
-		return (
-		  <div>
-			{placeholder}
-		  </div>
-		)
-	  }
-	  
 
 
 	return (
@@ -238,7 +215,11 @@ const Home = ({ connectAccount, isConnected }) => {
 				<h1 className="text-3xl md:text-5xl">Leapin' Frogs</h1>
 				{isConnected ? (
 					<>
-					<p className="pt-10 md:pt-20 text-lg md:text-2xl w-5/6 xl:w-4/6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eaque suscipit minima ipsum laborum autem dolores illo ex obcaecati aliquid!</p>
+					<p className="pt-10 md:pt-20 text-lg md:text-2xl w-5/6 xl:w-4/6">Get your very own Leapin' Frogs NFT for just 0.01 ETH per NFT.
+You can mint up to 5 NFTs per wallet.
+Each NFT represents a unique moment in the life of our adventurous and curious frog.
+Once sold out, the price of these rare and delightful NFTs will depend on the free market on NFT exchanges.
+Don't wait too long to add a piece of the magic to your collection mint your Leapin' Frogs NFTs today!</p>
 					<div className="mt-10 md:mt-20 flex justify-evenly items-center w-1/4">
 						<div className='pixel3 lg:pixel2'>
 							<p className='px-4' onClick={handleDecrement}>-</p>
@@ -256,7 +237,7 @@ const Home = ({ connectAccount, isConnected }) => {
 					</>
 					  ) : (
 						<>
-							<p className="pt-10 md:pt-20 pb-10 text-4xl text-red-500">Please connect your wallet to continue.</p>
+							<p className="pt-10 md:pt-20 pb-10 px-4 text-3xl sm:text-4xl text-red-500">Please connect your wallet to continue.</p>
 							<div className="pixel3 lg:pixel2">
 						  		<p onClick={connectAccount()}>Connect Wallet</p>
 							</div>
@@ -270,47 +251,7 @@ const Home = ({ connectAccount, isConnected }) => {
 		<div className="bg-background3 bg-no-repeat bg-cover bg-bottom bg-fixed">
 			<div className="py-20 md:py-52 px-2 flex justify-evenly">
 					<div className="text-sm sm:text-xl md:text-3xl lg:text-4xl">
-						<DisplayText/>
-						{/* <TextDisplay text="In the magical world of Leapin' Frogs,
-There's a curious creature, hopping logs.
-With a leather backpack on his back,
-This intrepid frog is always on the attack.
-
-In 101 moments, we see his life unfold,
-A story of adventure, waiting to be told.
-He walks through cities, with towering walls,
-And wanders through woods, where the sunlight falls.
-
-He crosses oceans, where the sea wind blows,
-And explores deserts, where the hot sand glows.
-No path is too treacherous, no place too far,
-He's fearless and bold, like a shining star.
-
-The frog has no name, but his spirit is free,
-A traveler at heart, like you and me.
-We wonder where he is now, and what he might see,
-As he leaps through life, with joyful glee.
-
-He roams through the countryside, with his pack on his back,
-Through meadows and fields, where the wildflowers stack.
-He climbs up mountains, with snow on the peaks,
-And walks through valleys, where the river runs and speaks.
-
-He loves the moments, when the sun sets in the sky,
-And paints the world, with colors that make us sigh.
-He feels the raindrops, as they touch his skin,
-And marvels at the world, that we all live in.
-
-Through all his travels, he seeks the simple joys,
-The wonders that surround us, in life's many alloys.
-He takes in the beauty, of every place he goes,
-And finds the happiness, in the things that most don't know.
-
-So come and join the Leapin' Frogs adventure,
-In a world where pixels, come alive with texture.
-A collection of memories, capturing the frog's essence,
-And all the wonder, of his daring presence." delay={100}/> */}
-						{/* <p>
+						<p>
 						
 In the magical world of Leapin' Frogs,<br/>
 There's a curious creature, hopping logs.<br/>
@@ -351,7 +292,7 @@ So come and join the Leapin' Frogs adventure,<br/>
 In a world where pixels, come alive with texture.<br/>
 A collection of memories, capturing the frog's essence,<br/>
 And all the wonder, of his daring presence.<br/>
-</p> */}
+</p>
 					</div>
 			</div>
 		</div>
