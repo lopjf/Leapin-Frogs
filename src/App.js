@@ -1,7 +1,11 @@
-import { useState } from 'react';
-import Home from './pages/Home';
-import Navbar from './NavBar';
-import Footer from './Footer';
+import { useState, useEffect } from 'react';
+import Intro from './pages/Intro';
+import Carousel from './pages/Carousel';
+import Accordion from './pages/Accordion';
+import Minting from './pages/Minting';
+import Poem from './pages/Poem';
+import Navbar from './pages/NavBar';
+import Footer from './pages/Footer';
 
 function App() {
   const [accounts, setAccounts] = useState([]); // useState is a type of hook. It enables react to render the right elements and components when 'accounts' and 'setAccounts' get updated
@@ -19,9 +23,13 @@ function App() {
 
   return (
     <div>
-      <Navbar connectAccount={connectAccount} isConnected={isConnected}></Navbar>
-      <Home connectAccount={connectAccount} isConnected={isConnected}></Home>
-      <Footer></Footer>
+      <Navbar connectAccount={connectAccount} isConnected={isConnected} />
+      <Intro />
+      <Carousel />
+      <Accordion />
+      <Minting connectAccount={connectAccount} isConnected={isConnected}/>
+      <Poem />
+      <Footer />
     </div>
   );
 }
