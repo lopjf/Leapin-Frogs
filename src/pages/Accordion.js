@@ -30,7 +30,7 @@ const Accordion = () => {
 	},
 	{
 		title:"What is the price of a Leapin' Frogs NFT?",
-		desc:"For now, you can own a piece of the charming and unique Leapin' Frogs NFT collection for just 0.01 ETH. At the time of writing, that's roughly equivalent to $15 USD, but please note that the value of cryptocurrencies can be volatile and subject to change. Once the collection is sold out, the price will depend on the free market on NFT exchanges. So don't wait too long to join the adventure and add a delightful piece of art to your collection!",
+		desc:"For now, you can own a piece of the charming and unique Leapin' Frogs NFT collection for just 20 MATIC. At the time of writing, that's roughly equivalent to $20 USD, but please note that the value of cryptocurrencies can be volatile and subject to change. Once the collection is sold out, the price will depend on the free market on NFT exchanges. So don't wait too long to join the adventure and add a delightful piece of art to your collection!",
 	},
 ];
 

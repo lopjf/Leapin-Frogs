@@ -1,5 +1,5 @@
 import React from 'react'
-import liquidSquid from '../LiquidSquid.json';	// this enable us to grab the ABI, to connect to our contract
+import leapinFrogs from '../LeapinFrogs.json';	// this enable us to grab the ABI, to connect to our contract
 import { useState } from 'react';
 import { ethers, BigNumber } from 'ethers';	
 
@@ -7,7 +7,7 @@ const Minting = ({ connectAccount, isConnected }) => {
 	// Minting
 	
 	const [mintAmount, setMintAmount] = useState(1);
-	const liquidSquidAddress = "0x593E0473ec5321C5622A1F7aB96698586c71E81d";
+	const LeapinFrogsAddress = "0x30da92439995bB5502148100110D26aC6cBe50be";
 	const minAmount = 1;
 	const maxAmount = 5;
 
@@ -17,13 +17,13 @@ const Minting = ({ connectAccount, isConnected }) => {
 			const provider = new ethers.providers.Web3Provider(window.ethereum);	// this provides a way for ethers to connect to the blockchain. It is a initial set-up
 			const signer = provider.getSigner();	// for every transaction we need a signer. something that signs the transactions
 			const contract = new ethers.Contract(
-				liquidSquidAddress,
-				liquidSquid.abi,
+				LeapinFrogsAddress,
+				leapinFrogs.abi,
 				signer
 			);
 			try {		// BigNumber is used because Solidity requires it
 				const response = await contract.mint(BigNumber.from(mintAmount), {
-					value: ethers.utils.parseEther((0.02 * mintAmount).toString()),	// we're passing the mint price
+					value: ethers.utils.parseEther((20 * mintAmount).toString()),	// we're passing the mint price
 				});	// call the smart contract function mint
 				console.log('response: ', response);	// the response doesn't really matter but we still check it
 			} catch (err) {	// if anything failes then we catch it to give an error, just in case
@@ -49,7 +49,7 @@ const Minting = ({ connectAccount, isConnected }) => {
 				<h1 className="text-3xl md:text-5xl">Leapin' Frogs</h1>
 				{isConnected ? (
 					<>
-					<p className="pt-10 md:pt-20 text-lg md:text-2xl w-5/6 xl:w-4/6">Get your very own Leapin' Frogs NFT for just 0.01 ETH per NFT.
+					<p className="pt-10 md:pt-20 text-lg md:text-2xl w-5/6 xl:w-4/6">Get your very own Leapin' Frogs NFT for just 20 MATIC per NFT.
 You can mint up to 5 NFTs per wallet.
 Each NFT represents a unique moment in the life of our adventurous and curious frog.
 Once sold out, the price of these rare and delightful NFTs will depend on the free market on NFT exchanges.
