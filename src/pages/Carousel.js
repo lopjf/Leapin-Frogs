@@ -12,34 +12,34 @@ const Carousel = () => {
 
 const slides = [
 	{
-		url: 'https://cdn.midjourney.com/a3d14172-8e49-46bd-993f-f95d4e33bb2a/grid_0.png' // 1
+		url: 'https://ipfs.io/ipfs/bafybeihmcftsiq2cvfots5j6p4thnmpylpnldazctzojlny6ta2rkx4pwi/1.jpg' // 1
 	},
 	{
-		url: 'https://cdn.midjourney.com/be14c13d-a2ca-4a06-b992-0db167e1d9d3/grid_0.png' // 2
+		url: 'https://ipfs.io/ipfs/bafybeihmcftsiq2cvfots5j6p4thnmpylpnldazctzojlny6ta2rkx4pwi/2.jpg' // 2
 	},
 	{
-		url: 'https://cdn.midjourney.com/3b917151-6bd6-4a6e-b0c4-65976ea8b0af/grid_0.png' // 3
+		url: 'https://ipfs.io/ipfs/bafybeihmcftsiq2cvfots5j6p4thnmpylpnldazctzojlny6ta2rkx4pwi/3.jpg' // 3
 	},
 	{
-		url: 'https://cdn.midjourney.com/cd209792-ceee-4ed4-88a9-b62b02b69263/grid_0.png' // 4
+		url: 'https://ipfs.io/ipfs/bafybeihmcftsiq2cvfots5j6p4thnmpylpnldazctzojlny6ta2rkx4pwi/4.jpg' // 4
 	},
 	{
-		url: 'https://cdn.midjourney.com/9e889d93-3d5e-4b6a-920c-d543219496e4/grid_0.png' // 5
+		url: 'https://ipfs.io/ipfs/bafybeihmcftsiq2cvfots5j6p4thnmpylpnldazctzojlny6ta2rkx4pwi/5.jpg' // 5
 	},
 	{
-		url: 'https://cdn.midjourney.com/03bc67f4-b4b3-468a-ab6c-8ba7f95349d7/grid_0.png' // 6
+		url: 'https://ipfs.io/ipfs/bafybeihmcftsiq2cvfots5j6p4thnmpylpnldazctzojlny6ta2rkx4pwi/6.jpg' // 6
 	},
 	{
-		url: 'https://cdn.midjourney.com/39695d84-0f98-4a6d-96e5-b2bc79a84c1a/grid_0.png' // 7
+		url: 'https://ipfs.io/ipfs/bafybeihmcftsiq2cvfots5j6p4thnmpylpnldazctzojlny6ta2rkx4pwi/7.jpg' // 7
 	},
 	{
-		url: 'https://cdn.midjourney.com/16f50eb9-53b8-48e0-a266-8e501443660d/grid_0.png' // 8
+		url: 'https://ipfs.io/ipfs/bafybeihmcftsiq2cvfots5j6p4thnmpylpnldazctzojlny6ta2rkx4pwi/8.jpg' // 8
 	},
 	{
-		url: 'https://cdn.midjourney.com/c28944bf-975c-4e3f-acaf-cac11361e6d3/grid_0.png' // 9
+		url: 'https://ipfs.io/ipfs/bafybeihmcftsiq2cvfots5j6p4thnmpylpnldazctzojlny6ta2rkx4pwi/9.jpg' // 9
 	},
 	{
-		url: 'https://cdn.midjourney.com/95f72c54-4d8c-4bb8-ac38-f5ce46464fe3/grid_0.png' // 10
+		url: 'https://ipfs.io/ipfs/bafybeihmcftsiq2cvfots5j6p4thnmpylpnldazctzojlny6ta2rkx4pwi/10.jpg' // 10
 	},
 ];
 

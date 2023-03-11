@@ -6,9 +6,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'background1': "url('/home/loris/Documents/webdev/Leapin-Frogs/src/assets/backgrounds/background1.jpg')",
-        'background2': "url('/home/loris/Documents/webdev/Leapin-Frogs/src/assets/backgrounds/background2.jpg')",
-        'background3': "url('/home/loris/Documents/webdev/Leapin-Frogs/src/assets/backgrounds/background3.jpg')",
+        'background1': "url('/src/assets/backgrounds/background1.jpg')",
+        'background2': "url('/src/assets/backgrounds/background2.jpg')",
+        'background3': "url('/src/assets/backgrounds/background3.jpg')",
       },
     },
     screens: {

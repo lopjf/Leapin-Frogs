@@ -22,7 +22,7 @@ const Accordion = () => {
 	},
 	{
 		title:"How can I buy Leapin' Frogs?",
-		desc:"To buy Leapin' Frogs, you can mint them directly on our website. Each unique NFT can be minted up to a maximum of five times per wallet. Simply connect your wallet to the website, choose the NFT you would like to mint, and follow the simple steps. The NFTs are available for purchase now and are perfect for collectors who appreciate the unique charm and retro Sega style of our adventurous frog. We're also working on listing our collection on Opensea, so stay tuned for updates on that. Don't miss your chance to own a piece of this delightful and heartwarming collection!",
+		desc:"To buy Leapin' Frogs, you can mint them directly on our website. Each unique NFT can be minted up to a maximum of five NFT per wallet. Simply connect your wallet to the website, make sure to be connected on the Polygon network, and follow the simple steps. The NFTs are available for purchase now and are perfect for collectors who appreciate the unique charm and retro Sega style of our adventurous frog. The colleciton is also available on Opensea. Don't miss your chance to own a piece of this delightful and heartwarming collection!",
 	},
 	{
 		title:"Who created all this?",

@@ -54,7 +54,8 @@ You can mint up to 5 NFTs per wallet.
 Each NFT represents a unique moment in the life of our adventurous and curious frog.
 Once sold out, the price of these rare and delightful NFTs will depend on the free market on NFT exchanges.
 Don't wait too long to add a piece of the magic to your collection mint your Leapin' Frogs NFTs today!</p>
-					<div className="mt-10 md:mt-20 flex justify-evenly items-center w-1/4">
+					<p className="pt-6 md:pt-12 text-lg md:text-2xl w-5/6 xl:w-4/6">Make sure you are connected to Polygon and have a sufficient amount of MATIC to be able to mint</p>
+					<div className="mt-6 md:mt-10 flex justify-evenly items-center w-1/4">
 						<div className='pixel3 lg:pixel2' onClick={handleDecrement}>
 							<p className='px-4'>-</p>
 						</div>
@@ -71,7 +72,12 @@ Don't wait too long to add a piece of the magic to your collection mint your Lea
 					</>
 					  ) : (
 						<>
-							<p className="pt-10 md:pt-20 pb-10 px-4 text-3xl sm:text-4xl text-red-500">Please connect your wallet to access the minting page.</p>
+							<div className='relative pt-10 md:pt-20 pb-6 px-4'>
+								{/* <p className="invisible sm:visible text-3xl sm:text-4xl text-red-500">Please connect your wallet to access the minting page.</p> */}
+								<p className="absolute inset-16 invisible sm:visible text-3xl sm:text-4xl text-red-500">Please connect your wallet to access the minting page.</p>
+								{/* <p className="visible sm:invisible -mt-20 text-3xl sm:text-4xl text-red-500">Please access the Leapin' Frogs website through your Metamask App to connect wallet.</p> */}
+								<p className="visible sm:invisible text-3xl sm:text-4xl text-red-500">Please access the Leapin' Frogs website through your Metamask App to connect wallet.</p>
+							</div>
 							<div className="pixel3 lg:pixel2" onClick={connectAccount}>
 						  		<p>Connect Wallet</p>
 							</div>
