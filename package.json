@@ -2,6 +2,7 @@
   "name": "minting1",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://lopjf.github.io/Leapin-Frogs",
   "dependencies": {
     "@openzeppelin/contracts": "^4.8.2",
     "@testing-library/jest-dom": "^5.16.5",
