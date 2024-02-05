@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Leapin-Frogs/static/css/main.9242ffd1.css",
-    "main.js": "/Leapin-Frogs/static/js/main.de601551.js",
-    "static/media/logo.png": "/Leapin-Frogs/static/media/logo.de4eed486e133f7cfec9.png",
-    "static/media/background2.jpg": "/Leapin-Frogs/static/media/background2.c2a8562019f7207817f3.jpg",
-    "static/media/background1.jpg": "/Leapin-Frogs/static/media/background1.72129a8fe247fc9acb5b.jpg",
-    "static/media/background3.jpg": "/Leapin-Frogs/static/media/background3.f61ecc95f458e38ee955.jpg",
-    "index.html": "/Leapin-Frogs/index.html",
-    "main.9242ffd1.css.map": "/Leapin-Frogs/static/css/main.9242ffd1.css.map",
-    "main.de601551.js.map": "/Leapin-Frogs/static/js/main.de601551.js.map"
+    "main.css": "/static/css/main.044d3aaa.css",
+    "main.js": "/static/js/main.99be3379.js",
+    "static/media/logo.png": "/static/media/logo.de4eed486e133f7cfec9.png",
+    "static/media/background2.jpg": "/static/media/background2.c2a8562019f7207817f3.jpg",
+    "static/media/background1.jpg": "/static/media/background1.72129a8fe247fc9acb5b.jpg",
+    "static/media/background3.jpg": "/static/media/background3.f61ecc95f458e38ee955.jpg",
+    "index.html": "/index.html",
+    "main.044d3aaa.css.map": "/static/css/main.044d3aaa.css.map",
+    "main.99be3379.js.map": "/static/js/main.99be3379.js.map"
   },
   "entrypoints": [
-    "static/css/main.9242ffd1.css",
-    "static/js/main.de601551.js"
+    "static/css/main.044d3aaa.css",
+    "static/js/main.99be3379.js"
   ]
 }
