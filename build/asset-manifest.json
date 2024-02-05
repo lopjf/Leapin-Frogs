@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Leapin-Frogs/static/css/main.9242ffd1.css",
+    "main.js": "/Leapin-Frogs/static/js/main.de601551.js",
+    "static/media/logo.png": "/Leapin-Frogs/static/media/logo.de4eed486e133f7cfec9.png",
+    "static/media/background2.jpg": "/Leapin-Frogs/static/media/background2.c2a8562019f7207817f3.jpg",
+    "static/media/background1.jpg": "/Leapin-Frogs/static/media/background1.72129a8fe247fc9acb5b.jpg",
+    "static/media/background3.jpg": "/Leapin-Frogs/static/media/background3.f61ecc95f458e38ee955.jpg",
+    "index.html": "/Leapin-Frogs/index.html",
+    "main.9242ffd1.css.map": "/Leapin-Frogs/static/css/main.9242ffd1.css.map",
+    "main.de601551.js.map": "/Leapin-Frogs/static/js/main.de601551.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9242ffd1.css",
+    "static/js/main.de601551.js"
+  ]
+}
